@@ -1,60 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>12BitDoc</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="sidenav">
-        <a href="#InputUnit">Input Unit</a>
-        <a href="#MemoryUnit">Memory Unit</a>
-        <a href="#ArithmeticLogicUnit">Arithmetic Logic Unit</a>
-        <a href="#ControlUnit">Control Unit</a>
-        <a href="#OutputUnit">Output Unit</a>
+      <a href="#ComputerPlan">Computer Plan</a>
+      <a href="#InputUnit">Input Unit</a>
+      <a href="#MemoryUnit">Memory Unit</a>
+      <a href="#ArithmeticLogicUnit">Arithmetic Logic Unit</a>
+      <a href="#ControlUnit">Control Unit</a>
+      <a href="#OutputUnit">Output Unit</a>
     </div>
     <div class="main">
-        <h1>12-Bit Computer Documentation</h1>
-        <p>
-            This documentation is made to document the development of an 12-Bit computer.
-            This will be used to show the schematics, k-maps, truth tables, etc. of the computer to help better understand the workings and thought process of this machine.
-        </p>
-        <h2>
-            Input Unit
-        </h2>
-        <p>
-            What is needed to interact with the computer.
-        </p>
-        <h3>
-            Numpad
-        </h3>
-        <p>
-            A numpad to input numbers.
-        </p>
-        <h3>
-            Logic Pad
-        </h3>
-        <p>
-            A pad that allows for the programing of logic.
-        </p>
-        <h3>
-            BCD to Binary
-        </h3>
-        <p>
-            Converting from Binary Coded Decimal to Binary.
-        </p>
+      <h1>12-Bit Computer Documentation</h1>
+      <p>
+        This documentation is made to document the development of an 12-Bit
+        computer. This will be used to show the schematics, k-maps, truth
+        tables, etc. of the computer to help better understand the workings and
+        thought process of this machine.
+      </p>
+      <h2>Computer Plan</h2>
 
-        <br>
+      <p>
+        The larger picture of what the computer will do and the componets it
+        needs.
+      </p>
 
-        <h2>
-            Arithmetic Logic Unit
-        </h2>
+      <h2>Input Unit</h2>
+      <p>What is needed to interact with the computer.</p>
 
+      <h3>Numpad</h3>
+      <img src="Dependencies/Numpad.jpg" />
+      <h3>Logic Pad</h3>
+      <p></p>
+      <p>A pad that allows for the programing of logic.</p>
+      <h3>BCD to Binary</h3>
+      <p>Converting from Binary Coded Decimal to Binary.</p>
+
+      <br />
+
+      <h2>Memory Unit</h2>
+
+      <h3>Requirements</h3>
+      <p>
+        1. Must store 8-bits <br />
+        2. Must have at least 8 1-byte Memory modules<br />
+        3. Be able to enable input<br />
+        4. Be able to enable output<br />
+        5. Be able to choose which memory module will be used
+      </p>
+
+      <h3>Memory Module Truth Table</h3>
+
+      <table>
+        <tr>
+          <th>Input</th>
+          <th>Output</th>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>Clock</td>
+                <td>Info Lines</td>
+                <td>Input</td>
+                <td>Output</td>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>X</td>
+                <td>0</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>X</td>
+                <td>1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>X</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td>Info Lines</td>
+              </tr>
+              <tr>
+                <td>Nothing</td>
+              </tr>
+              <tr>
+                <td>Outputs stored data</td>
+              </tr>
+              <tr>
+                <td>Stores Data From Info Line</td>
+              </tr>
+              <tr>
+                <td>Outputs Data From Info Line & Stores It</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <img src="Dependencies/8-Bit Memory Module.jpg" />
+
+      <h3>Full Memory Module Truth Table</h3>
+
+      <table>
+        <tr>
+          <th>Input</th>
+          <th>Output</th>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>Clock</td>
+                <td>Info Lines</td>
+                <td>Memory Num</td>
+                <td>Input</td>
+                <td>Output</td>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>X</td>
+                <td>X</td>
+                <td>0</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>X</td>
+                <td>X</td>
+                <td>1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>X</td>
+                <td>X</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td>Info Lines</td>
+              </tr>
+              <tr>
+                <td>Nothing</td>
+              </tr>
+              <tr>
+                <td>Outputs stored data from Memory Num</td>
+              </tr>
+              <tr>
+                <td>Stores data into Memory Num</td>
+              </tr>
+              <tr>
+                <td>Stores data into Memory Num & outputs it</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <img src="Dependencies/8x 8-Bit Memory Module.jpg" />
+
+      <h2>Arithmetic Logic Unit</h2>
+
+      <table>
+        <tr>
+          <th>Input</th>
+          <th>Output</th>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>Selector</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>000</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>001</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>010</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>011</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>101</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>110</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>111</td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td>Sum Difference Product Quotient</td>
+              </tr>
+              <tr>
+                <td>Invert A</td>
+              </tr>
+              <tr>
+                <td>A Or B</td>
+              </tr>
+              <tr>
+                <td>A And B</td>
+              </tr>
+              <tr>
+                <td>A Xor B</td>
+              </tr>
+              <tr>
+                <td>A + B</td>
+              </tr>
+              <tr>
+                <td>A - B</td>
+              </tr>
+              <tr>
+                <td>A * B</td>
+              </tr>
+              <tr>
+                <td>A / B</td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <img src="Dependencies/8-Bit ALU.jpg" />
+
+      <h3>Logic Unit</h3>
+
+      <table>
+        <tr>
+          <th>Input</th>
+          <th>Output</th>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>Selector</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>0100</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>0010</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>0001</td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td>Invert Or And</td>
+              </tr>
+              <tr>
+                <td>Invert A</td>
+              </tr>
+              <tr>
+                <td>A OR B</td>
+              </tr>
+              <tr>
+                <td>A AND B</td>
+              </tr>
+              <tr>
+                <td>A XOR B</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <img src="Dependencies/8-Bit Logic Unit.jpg" />
+
+      <h3>Arithmetic Unit</h3>
+
+      <table>
+        <tr>
+          <th>Input</th>
+          <th>Output</th>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>Selector</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>0100</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>0010</td>
+              </tr>
+              <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>0001</td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td>Sum Difference Product Quotient</td>
+              </tr>
+              <tr>
+                <td>A + B</td>
+              </tr>
+              <tr>
+                <td>A - B</td>
+              </tr>
+              <tr>
+                <td>A * B</td>
+              </tr>
+              <tr>
+                <td>A / B</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <img src="Dependencies/8-Bit Arithmic Unit.jpg" />
+
+
+      <p>Links</p>
+      <a href="https://github.com/hneemann/Digital">Circuit Software</a><br />
+      <a
+        href="https://drive.google.com/drive/folders/1i-7FfwaF2Adn4AZgLVrIMydk3NbR9XBS?usp=drive_link"
+        >Circuit Files</a
+      >
     </div>
-    
-
-</body>
-<script src="script.js"></script>
+  </body>
+  <script src="script.js"></script>
 </html>

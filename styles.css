@@ -1,20 +1,21 @@
 body{
     background-color: black;
-}
-
-h1{
-    color: whitesmoke;
-}
-h2{
-    color: whitesmoke;
-}
-h3{
+    font-family: 'Segoe UI';
     color: whitesmoke;
 }
 p{
-    color: whitesmoke;
     font-size: 20px
 }
+a{
+  color: lightblue;
+  font-size: 20px;
+}
+
+table,th,td
+  {
+    border: 1px solid white;
+  }
+
 .sidenav {
     width: 130px;
     position: fixed;
